@@ -234,31 +234,43 @@ export default function ApplicationsPage() {
                         </div>
                       </div>
 
-                      <div className="flex gap-2">
-                        {app.status === 'submitted' && (
-                          <button
-                            onClick={() => updateStatus(app.id, 'under_review')}
-                            className="flex-1 text-xs bg-yellow-600 text-white py-1 rounded hover:bg-yellow-700 transition"
+                      <div className="flex flex-col gap-2">
+                        {/* AI Review Button */}
+                        {(app.status === 'submitted' || app.status === 'under_review') && (
+                          <Link
+                            href={`/dashboard/ai-review?id=${app.id}`}
+                            className="w-full text-xs bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 px-3 rounded hover:from-indigo-700 hover:to-purple-700 transition font-medium text-center flex items-center justify-center gap-1"
                           >
-                            Review
-                          </button>
+                            🤖 AI Review
+                          </Link>
                         )}
-                        {app.status === 'under_review' && (
-                          <>
+                        
+                        <div className="flex gap-2">
+                          {app.status === 'submitted' && (
                             <button
-                              onClick={() => updateStatus(app.id, 'approved')}
-                              className="flex-1 text-xs bg-green-600 text-white py-1 rounded hover:bg-green-700 transition"
+                              onClick={() => updateStatus(app.id, 'under_review')}
+                              className="flex-1 text-xs bg-yellow-600 text-white py-1 rounded hover:bg-yellow-700 transition"
                             >
-                              Setujui
+                              Review
                             </button>
-                            <button
-                              onClick={() => updateStatus(app.id, 'rejected')}
-                              className="flex-1 text-xs bg-red-600 text-white py-1 rounded hover:bg-red-700 transition"
-                            >
-                              Tolak
-                            </button>
-                          </>
-                        )}
+                          )}
+                          {app.status === 'under_review' && (
+                            <>
+                              <button
+                                onClick={() => updateStatus(app.id, 'approved')}
+                                className="flex-1 text-xs bg-green-600 text-white py-1 rounded hover:bg-green-700 transition"
+                              >
+                                Setujui
+                              </button>
+                              <button
+                                onClick={() => updateStatus(app.id, 'rejected')}
+                                className="flex-1 text-xs bg-red-600 text-white py-1 rounded hover:bg-red-700 transition"
+                              >
+                                Tolak
+                              </button>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   ))}
