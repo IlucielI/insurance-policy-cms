@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 interface Product {
   id: string
+  slug?: string
   name: string
   category: string
   description: string
@@ -45,7 +46,8 @@ export default function ProductsPage() {
         // Mock data fallback
         setProducts([
           {
-            id: '1',
+            id: 'asuransi-jiwa-premium',
+            slug: 'asuransi-jiwa-premium',
             name: 'Asuransi Jiwa Premium',
             category: 'life',
             description: 'Perlindungan finansial komprehensif untuk keluarga',
@@ -55,7 +57,8 @@ export default function ProductsPage() {
             created_at: new Date().toISOString()
           },
           {
-            id: '2',
+            id: 'asuransi-kesehatan-plus',
+            slug: 'asuransi-kesehatan-plus',
             name: 'Asuransi Kesehatan Plus',
             category: 'health',
             description: 'Biaya perawatan medis dan rawat inap',
@@ -65,8 +68,9 @@ export default function ProductsPage() {
             created_at: new Date().toISOString()
           },
           {
-            id: '3',
-            name: 'Asuransi Kendaraan',
+            id: 'asuransi-kendaraan-comprehensive',
+            slug: 'asuransi-kendaraan-comprehensive',
+            name: 'Asuransi Kendaraan Comprehensive',
             category: 'vehicle',
             description: 'Perlindungan mobil dan motor dari risiko',
             base_premium: 300000,
@@ -80,7 +84,8 @@ export default function ProductsPage() {
       // Mock data on error
       setProducts([
         {
-          id: '1',
+          id: 'asuransi-jiwa-premium',
+          slug: 'asuransi-jiwa-premium',
           name: 'Asuransi Jiwa Premium',
           category: 'life',
           description: 'Perlindungan finansial komprehensif untuk keluarga',
