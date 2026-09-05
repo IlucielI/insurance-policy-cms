@@ -1,0 +1,270 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "download": "Download",
+    "upload": "Upload",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh",
+    "actions": "Actions"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "applications": "Applications",
+    "underwriting": "Underwriting",
+    "products": "Products",
+    "claims": "Claims",
+    "customers": "Customers",
+    "billing": "Billing",
+    "analytics": "Analytics",
+    "aiReview": "AI Review",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to CMS Admin",
+      "email": "Email",
+      "password": "Password",
+      "loginButton": "Sign In",
+      "processing": "Processing...",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "serverError": "Failed to connect to server"
+      }
+    },
+    "roles": {
+      "superAdmin": "Super Admin",
+      "underwriter": "Underwriter",
+      "claimsOfficer": "Claims Officer",
+      "finance": "Finance",
+      "user": "User"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "role": "Role",
+    "stats": {
+      "total": "Total",
+      "draft": "Draft",
+      "submitted": "Submitted",
+      "underReview": "Under Review",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "quickActions": {
+      "reviewApplications": {
+        "title": "Review Applications",
+        "description": "View and process applications"
+      },
+      "claims": {
+        "title": "Incoming Claims",
+        "description": "Process incoming claims"
+      },
+      "billing": {
+        "title": "Billing",
+        "description": "Manage invoices and payments"
+      },
+      "manageUsers": {
+        "title": "Manage Users",
+        "description": "User & role management"
+      }
+    },
+    "recentApplications": {
+      "title": "Recent Applications",
+      "applicant": "Applicant",
+      "sumAssured": "Sum Assured",
+      "premium": "Premium",
+      "status": "Status",
+      "date": "Date",
+      "actions": "Actions",
+      "viewDetails": "View"
+    }
+  },
+  "applications": {
+    "title": "Applications",
+    "subtitle": "Manage insurance applications",
+    "applicationId": "Application ID",
+    "applicant": "Applicant",
+    "product": "Product",
+    "sumAssured": "Sum Assured",
+    "premium": "Premium",
+    "status": "Status",
+    "submittedDate": "Submitted Date",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "approve": "Approve",
+    "reject": "Reject",
+    "status_values": {
+      "draft": "Draft",
+      "submitted": "Submitted",
+      "under_review": "Under Review",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    }
+  },
+  "underwriting": {
+    "title": "Underwriting",
+    "subtitle": "Review and risk assessment",
+    "workbench": "Workbench",
+    "riskAssessment": "Risk Assessment",
+    "documents": "Documents",
+    "medicalHistory": "Medical History",
+    "financialInfo": "Financial Information",
+    "decision": "Decision",
+    "approve": "Approve",
+    "reject": "Reject",
+    "requestInfo": "Request Additional Info",
+    "notes": "Notes"
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Manage insurance products",
+    "addProduct": "Add Product",
+    "productName": "Product Name",
+    "category": "Category",
+    "coverage": "Sum Assured",
+    "premium": "Premium",
+    "status": "Status",
+    "actions": "Actions",
+    "active": "Active",
+    "inactive": "Inactive",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "claims": {
+    "title": "Claims",
+    "subtitle": "Manage insurance claims",
+    "claimId": "Claim ID",
+    "policyNumber": "Policy No.",
+    "claimant": "Claimant",
+    "claimType": "Claim Type",
+    "amount": "Amount",
+    "date": "Date",
+    "status": "Status",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "approve": "Approve",
+    "reject": "Reject",
+    "status_values": {
+      "draft": "Draft",
+      "submitted": "Submitted",
+      "under_review": "Under Review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "paid": "Paid"
+    }
+  },
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Manage customer data",
+    "customerId": "Customer ID",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "policies": "Policies",
+    "registeredDate": "Registered Date",
+    "actions": "Actions",
+    "viewDetails": "View Details"
+  },
+  "billing": {
+    "title": "Billing",
+    "subtitle": "Manage billing and payments",
+    "tabs": {
+      "overview": "Overview",
+      "invoices": "Invoices",
+      "payments": "Payments",
+      "outstanding": "Outstanding",
+      "commissions": "Commissions"
+    },
+    "invoiceNumber": "Invoice No.",
+    "customer": "Customer",
+    "policy": "Policy",
+    "amount": "Amount",
+    "dueDate": "Due Date",
+    "status": "Status",
+    "actions": "Actions",
+    "status_values": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "overdue": "Overdue",
+      "cancelled": "Cancelled"
+    },
+    "paymentDate": "Payment Date",
+    "paymentMethod": "Payment Method",
+    "viewInvoice": "View Invoice"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Dashboard and analytics reports",
+    "overview": "Overview",
+    "revenue": "Revenue",
+    "policies": "Policies",
+    "claims": "Claims",
+    "customers": "Customers",
+    "growthRate": "Growth Rate",
+    "conversionRate": "Conversion Rate",
+    "claimRatio": "Claim Ratio"
+  },
+  "aiReview": {
+    "title": "AI Review",
+    "subtitle": "Automated review with AI",
+    "reviewStatus": "Review Status",
+    "confidence": "Confidence",
+    "recommendations": "Recommendations",
+    "flaggedIssues": "Flagged Issues",
+    "approve": "Approve",
+    "reject": "Reject",
+    "manualReview": "Manual Review"
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Generate and view reports",
+    "reportType": "Report Type",
+    "dateRange": "Date Range",
+    "generate": "Generate Report",
+    "export": "Export",
+    "types": {
+      "sales": "Sales Report",
+      "claims": "Claims Report",
+      "financial": "Financial Report",
+      "performance": "Performance Report"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "System configuration",
+    "tabs": {
+      "general": "General",
+      "users": "Users",
+      "roles": "Roles & Permissions",
+      "notifications": "Notifications",
+      "integrations": "Integrations"
+    },
+    "language": "Language",
+    "timezone": "Timezone",
+    "saveChanges": "Save Changes"
+  },
+  "sidebar": {
+    "logo": "Insurance CMS",
+    "roleBadge": "🔑",
+    "version": "CMS v1.0 · RBAC Enabled"
+  }
+}
