@@ -1,0 +1,270 @@
+{
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "success": "Berhasil",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "view": "Lihat",
+    "close": "Tutup",
+    "submit": "Kirim",
+    "search": "Cari",
+    "filter": "Filter",
+    "back": "Kembali",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "download": "Unduh",
+    "upload": "Unggah",
+    "confirm": "Konfirmasi",
+    "yes": "Ya",
+    "no": "Tidak",
+    "export": "Ekspor",
+    "import": "Impor",
+    "refresh": "Refresh",
+    "actions": "Aksi"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "applications": "Aplikasi",
+    "underwriting": "Underwriting",
+    "products": "Produk",
+    "claims": "Claims",
+    "customers": "Customer",
+    "billing": "Billing",
+    "analytics": "Analitik",
+    "aiReview": "AI Review",
+    "reports": "Laporan",
+    "settings": "Pengaturan"
+  },
+  "auth": {
+    "login": {
+      "title": "Masuk ke CMS Admin",
+      "email": "Email",
+      "password": "Password",
+      "loginButton": "Masuk",
+      "processing": "Memproses...",
+      "errors": {
+        "invalidCredentials": "Email atau password salah",
+        "serverError": "Gagal terhubung ke server"
+      }
+    },
+    "roles": {
+      "superAdmin": "Super Admin",
+      "underwriter": "Underwriter",
+      "claimsOfficer": "Claims Officer",
+      "finance": "Finance",
+      "user": "User"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "role": "Role",
+    "stats": {
+      "total": "Total",
+      "draft": "Draft",
+      "submitted": "Submitted",
+      "underReview": "Under Review",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "quickActions": {
+      "reviewApplications": {
+        "title": "Review Aplikasi",
+        "description": "Lihat dan proses aplikasi"
+      },
+      "claims": {
+        "title": "Claims Masuk",
+        "description": "Proses klaim yang masuk"
+      },
+      "billing": {
+        "title": "Billing",
+        "description": "Kelola invoice dan pembayaran"
+      },
+      "manageUsers": {
+        "title": "Kelola User",
+        "description": "Manajemen pengguna & role"
+      }
+    },
+    "recentApplications": {
+      "title": "Aplikasi Terbaru",
+      "applicant": "Pemohon",
+      "sumAssured": "Uang Pertanggungan",
+      "premium": "Premi",
+      "status": "Status",
+      "date": "Tanggal",
+      "actions": "Aksi",
+      "viewDetails": "Lihat"
+    }
+  },
+  "applications": {
+    "title": "Aplikasi",
+    "subtitle": "Kelola aplikasi asuransi",
+    "applicationId": "ID Aplikasi",
+    "applicant": "Pemohon",
+    "product": "Produk",
+    "sumAssured": "Uang Pertanggungan",
+    "premium": "Premi",
+    "status": "Status",
+    "submittedDate": "Tanggal Diajukan",
+    "actions": "Aksi",
+    "viewDetails": "Lihat Detail",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "status_values": {
+      "draft": "Draft",
+      "submitted": "Diajukan",
+      "under_review": "Sedang Direview",
+      "approved": "Disetujui",
+      "rejected": "Ditolak"
+    }
+  },
+  "underwriting": {
+    "title": "Underwriting",
+    "subtitle": "Review dan penilaian risiko",
+    "workbench": "Workbench",
+    "riskAssessment": "Penilaian Risiko",
+    "documents": "Dokumen",
+    "medicalHistory": "Riwayat Kesehatan",
+    "financialInfo": "Informasi Keuangan",
+    "decision": "Keputusan",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "requestInfo": "Minta Info Tambahan",
+    "notes": "Catatan"
+  },
+  "products": {
+    "title": "Produk",
+    "subtitle": "Kelola produk asuransi",
+    "addProduct": "Tambah Produk",
+    "productName": "Nama Produk",
+    "category": "Kategori",
+    "coverage": "Uang Pertanggungan",
+    "premium": "Premi",
+    "status": "Status",
+    "actions": "Aksi",
+    "active": "Aktif",
+    "inactive": "Tidak Aktif",
+    "edit": "Edit",
+    "delete": "Hapus"
+  },
+  "claims": {
+    "title": "Claims",
+    "subtitle": "Kelola klaim asuransi",
+    "claimId": "ID Klaim",
+    "policyNumber": "No. Polis",
+    "claimant": "Pengklaim",
+    "claimType": "Jenis Klaim",
+    "amount": "Jumlah",
+    "date": "Tanggal",
+    "status": "Status",
+    "actions": "Aksi",
+    "viewDetails": "Lihat Detail",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "status_values": {
+      "draft": "Draft",
+      "submitted": "Diajukan",
+      "under_review": "Sedang Direview",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "paid": "Dibayar"
+    }
+  },
+  "customers": {
+    "title": "Customer",
+    "subtitle": "Kelola data customer",
+    "customerId": "ID Customer",
+    "name": "Nama",
+    "email": "Email",
+    "phone": "Telepon",
+    "policies": "Polis",
+    "registeredDate": "Tanggal Daftar",
+    "actions": "Aksi",
+    "viewDetails": "Lihat Detail"
+  },
+  "billing": {
+    "title": "Billing",
+    "subtitle": "Kelola tagihan dan pembayaran",
+    "tabs": {
+      "overview": "Overview",
+      "invoices": "Invoice",
+      "payments": "Pembayaran",
+      "outstanding": "Tagihan Belum Lunas",
+      "commissions": "Komisi"
+    },
+    "invoiceNumber": "No. Invoice",
+    "customer": "Customer",
+    "policy": "Polis",
+    "amount": "Jumlah",
+    "dueDate": "Jatuh Tempo",
+    "status": "Status",
+    "actions": "Aksi",
+    "status_values": {
+      "paid": "Lunas",
+      "pending": "Belum Dibayar",
+      "overdue": "Terlambat",
+      "cancelled": "Dibatalkan"
+    },
+    "paymentDate": "Tanggal Bayar",
+    "paymentMethod": "Metode Pembayaran",
+    "viewInvoice": "Lihat Invoice"
+  },
+  "analytics": {
+    "title": "Analitik",
+    "subtitle": "Dashboard dan laporan analitik",
+    "overview": "Overview",
+    "revenue": "Pendapatan",
+    "policies": "Polis",
+    "claims": "Klaim",
+    "customers": "Customer",
+    "growthRate": "Tingkat Pertumbuhan",
+    "conversionRate": "Conversion Rate",
+    "claimRatio": "Rasio Klaim"
+  },
+  "aiReview": {
+    "title": "AI Review",
+    "subtitle": "Review otomatis dengan AI",
+    "reviewStatus": "Status Review",
+    "confidence": "Confidence",
+    "recommendations": "Rekomendasi",
+    "flaggedIssues": "Masalah yang Terdeteksi",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "manualReview": "Review Manual"
+  },
+  "reports": {
+    "title": "Laporan",
+    "subtitle": "Generate dan lihat laporan",
+    "reportType": "Jenis Laporan",
+    "dateRange": "Rentang Tanggal",
+    "generate": "Generate Laporan",
+    "export": "Ekspor",
+    "types": {
+      "sales": "Laporan Penjualan",
+      "claims": "Laporan Klaim",
+      "financial": "Laporan Keuangan",
+      "performance": "Laporan Performa"
+    }
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "subtitle": "Konfigurasi sistem",
+    "tabs": {
+      "general": "Umum",
+      "users": "Pengguna",
+      "roles": "Role & Permission",
+      "notifications": "Notifikasi",
+      "integrations": "Integrasi"
+    },
+    "language": "Bahasa",
+    "timezone": "Zona Waktu",
+    "saveChanges": "Simpan Perubahan"
+  },
+  "sidebar": {
+    "logo": "Insurance CMS",
+    "roleBadge": "🔑",
+    "version": "CMS v1.0 · RBAC Enabled"
+  }
+}
