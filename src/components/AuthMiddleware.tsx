@@ -9,15 +9,28 @@ export default function AuthMiddleware({ children }: { children: React.ReactNode
 
   useEffect(() => {
     // Skip auth check on login page
-    if (pathname === '/login') return
+    if (pathname === '/login' || pathname === '/') return
 
     // Check if user is authenticated
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token')
-      
+
       if (!token) {
-        // Redirect to login if not authenticated
         router.push('/login')
+        return
+      }
+
+      // For demo token, allow access but ensure user role is set
+      if (token === 'demo-token') {
+        const user = localStorage.getItem('user')
+        if (!user) {
+          localStorage.setItem('user', JSON.stringify({
+            email: 'demo@insurance.com',
+            role: 'super_admin',
+            roles: ['super_admin'],
+            name: 'Demo Admin',
+          }))
+        }
       }
     }
   }, [pathname, router])

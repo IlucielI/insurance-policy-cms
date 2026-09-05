@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import EmailPreviewModal from '@/components/EmailPreviewModal'
 
 interface Application {
   id: string
@@ -20,6 +21,9 @@ export default function ApplicationsPage() {
   const [applications, setApplications] = useState<Application[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<string>('all')
+  const [emailSending, setEmailSending] = useState<Record<string, boolean>>({})
+  const [previewOpen, setPreviewOpen] = useState(false)
+  const [previewType, setPreviewType] = useState<"welcome" | "policy" | "claim" | "reset">("policy")
 
   useEffect(() => {
     fetchApplications()
@@ -81,6 +85,28 @@ export default function ApplicationsPage() {
       setApplications(prev => 
         prev.map(app => app.id === id ? { ...app, status: newStatus, updated_at: new Date().toISOString() } : app)
       )
+    }
+  }
+
+  const sendApprovalEmail = async (appId: string) => {
+    setEmailSending(prev => ({ ...prev, [appId]: true }))
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://insurance-app-api.bayuanugerah.my.id/api/v1'
+      const res = await fetch(`${apiUrl}/admin/email/application-approved/${appId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      
+      if (res.ok) {
+        alert('✅ Email notifikasi berhasil dikirim!')
+      } else {
+        const data = await res.json()
+        alert('❌ Gagal kirim email: ' + (data.error || 'Unknown error'))
+      }
+    } catch (err) {
+      alert('❌ Error: ' + (err instanceof Error ? err.message : 'Network error'))
+    } finally {
+      setEmailSending(prev => ({ ...prev, [appId]: false }))
     }
   }
 
@@ -245,31 +271,56 @@ export default function ApplicationsPage() {
                           </Link>
                         )}
                         
-                        <div className="flex gap-2">
-                          {app.status === 'submitted' && (
+                        <div className="flex flex-col gap-2">
+                          <div className="flex gap-2">
+                            {app.status === 'submitted' && (
+                              <button
+                                onClick={() => updateStatus(app.id, 'under_review')}
+                                className="flex-1 text-xs bg-yellow-600 text-white py-1 rounded hover:bg-yellow-700 transition"
+                              >
+                                Review
+                              </button>
+                            )}
+                            {app.status === 'under_review' && (
+                              <>
+                                <button
+                                  onClick={() => updateStatus(app.id, 'approved')}
+                                  className="flex-1 text-xs bg-green-600 text-white py-1 rounded hover:bg-green-700 transition"
+                                >
+                                  Setujui
+                                </button>
+                                <button
+                                  onClick={() => updateStatus(app.id, 'rejected')}
+                                  className="flex-1 text-xs bg-red-600 text-white py-1 rounded hover:bg-red-700 transition"
+                                >
+                                  Tolak
+                                </button>
+                              </>
+                            )}
+                          </div>
+                          
+                          {/* Email Notification Button */}
+                          {app.status === 'approved' && (
                             <button
-                              onClick={() => updateStatus(app.id, 'under_review')}
-                              className="flex-1 text-xs bg-yellow-600 text-white py-1 rounded hover:bg-yellow-700 transition"
+                              onClick={() => sendApprovalEmail(app.id)}
+                              disabled={emailSending[app.id]}
+                              className="w-full text-xs bg-blue-600 text-white py-1.5 rounded hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-1"
                             >
-                              Review
+                              {emailSending[app.id] ? (
+                                <>⏳ Mengirim...</>
+                              ) : (
+                                <>📧 Kirim Email Notifikasi</>
+                              )}
                             </button>
                           )}
-                          {app.status === 'under_review' && (
-                            <>
-                              <button
-                                onClick={() => updateStatus(app.id, 'approved')}
-                                className="flex-1 text-xs bg-green-600 text-white py-1 rounded hover:bg-green-700 transition"
-                              >
-                                Setujui
-                              </button>
-                              <button
-                                onClick={() => updateStatus(app.id, 'rejected')}
-                                className="flex-1 text-xs bg-red-600 text-white py-1 rounded hover:bg-red-700 transition"
-                              >
-                                Tolak
-                              </button>
-                            </>
-                          )}
+                          
+                          {/* Preview Button */}
+                          <button
+                            onClick={() => { setPreviewType('policy'); setPreviewOpen(true) }}
+                            className="w-full text-xs bg-gray-100 text-gray-700 py-1.5 rounded hover:bg-gray-200 transition flex items-center justify-center gap-1 border border-gray-300"
+                          >
+                            👁 Pratinjau Email
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -332,6 +383,13 @@ export default function ApplicationsPage() {
           </div>
         )}
       </div>
+
+      {/* Email Preview Modal */}
+      <EmailPreviewModal
+        open={previewOpen}
+        onClose={() => setPreviewOpen(false)}
+        templateType={previewType}
+      />
     </div>
   )
 }

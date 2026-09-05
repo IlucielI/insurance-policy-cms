@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
@@ -14,7 +14,7 @@ interface AIReviewResult {
   confidence: number
 }
 
-export default function AIReviewPage() {
+function AIReviewContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const applicationId = searchParams.get('id')
@@ -294,5 +294,20 @@ export default function AIReviewPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function AIReviewPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-slate-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <AIReviewContent />
+    </Suspense>
   )
 }

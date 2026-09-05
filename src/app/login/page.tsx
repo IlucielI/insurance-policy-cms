@@ -34,7 +34,10 @@ export default function LoginPage() {
       // Store token and user info
       if (typeof window !== 'undefined') {
         localStorage.setItem('token', data.token || 'demo-token')
-        localStorage.setItem('user', JSON.stringify(data.user || { email: formData.email, role: 'admin' }))
+        localStorage.setItem('user', JSON.stringify({
+          ...data.user,
+          roles: data.roles || [data.user?.role || 'admin']
+        }))
       }
 
       // Redirect to dashboard
@@ -46,6 +49,7 @@ export default function LoginPage() {
         localStorage.setItem('user', JSON.stringify({ 
           email: formData.email, 
           role: 'admin',
+          roles: ['super_admin'],
           name: 'Admin User' 
         }))
       }
